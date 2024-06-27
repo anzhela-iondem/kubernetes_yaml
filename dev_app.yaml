@@ -21,6 +21,25 @@ spec:
           image: anzhela26/final-project-app:v1
           ports:
             - containerPort: 5005
+          env:
+            - name: FLASK_ENV
+              value: "development"
+            - name: DB_HOST
+              value: "10.0.2.15"  # Replace with the actual MySQL IP
+            - name: DB_NAME
+              value: "test_db"  
+            - name: DB_PORT
+              value: "3306"      # Porrt assigned to MySQL service
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: db-secrets
+                  key: DB_USERNAME
+            - name: DB_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: db-secrets
+                  key: DB_PASS
 
 ---
 
