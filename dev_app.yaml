@@ -25,11 +25,14 @@ spec:
             - name: FLASK_ENV
               value: "development"
             - name: DB_HOST
-              value: "10.0.2.15"  # Replace with the actual MySQL IP
+              valueFrom:
+                secretKeyRef:
+                  name: db-host
+                  key: DB_HOST
             - name: DB_NAME
               value: "test_db"  
             - name: DB_PORT
-              value: "3306"      # Porrt assigned to MySQL service
+              value: "3306"    
             - name: DB_USERNAME
               valueFrom:
                 secretKeyRef:
