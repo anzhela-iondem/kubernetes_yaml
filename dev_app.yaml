@@ -30,7 +30,7 @@ spec:
                   name: db-host
                   key: DB_HOST
             - name: DB_NAME
-              value: "test_db"  
+              value: "flaskapp"  
             - name: DB_PORT
               value: "3306"    
             - name: DB_USERNAME
