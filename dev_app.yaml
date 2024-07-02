@@ -27,7 +27,7 @@ spec:
             - name: DB_HOST
               valueFrom:
                 secretKeyRef:
-                  name: db-host
+                  name: db-secrets
                   key: DB_HOST
             - name: DB_NAME
               value: "flaskapp"  
